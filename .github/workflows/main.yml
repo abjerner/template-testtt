@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    
+    - name: 'Find & Replace'
+      uses: warrenbuckley/Token-Replace-Action@releases/v1
+      with:
+        find: '{{MyPlaceholder}}'
+        replace: 'HELLO WORLD'
